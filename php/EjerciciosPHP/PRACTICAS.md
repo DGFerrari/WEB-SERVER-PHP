@@ -35,7 +35,7 @@ Luego, otro archivo que contenga el formulario para mostrar la información del 
 |[ejercicio2/datosIntroducidos.php](./practica02/ejercicio2/datosIntroducidos.php)|Formulario POST con los campos: <br>Nombre => text <br>Apellido => text|
 |[ejercicio2/datosAlumno.php](./practica02/ejercicio2/datosAlumno.php)|Creamos variables con la información del **POST** y la mostramos por pantalla. Si se envió el formulario vacío, saltará un mensaje avisando de que no se ha introducido a ningún alumno.|
 
-#### Ejercicio 3: Sesiones y redireccionamiento
+## ▶ 03 Práctica de Sesiones y redireccionamiento
 
 Aplicación básica de inicio y cierre de sesión mediante un formulario y variables de sesión. El formulario envía el usuario y la contraseña a `bienvenida.php` mediante **POST**. Si ambos campos no están vacíos, se guarda el usuario en la sesión y se muestra un mensaje de bienvenida; si alguno está vacío, se redirige a `index.php`. Por ahora, no se comprueban credenciales específicas ni se verifica que exista una sesión activa al abrir la página de bienvenida.
 
