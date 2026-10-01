@@ -34,3 +34,14 @@ Luego, otro archivo que contenga el formulario para mostrar la información del 
 |-|-|
 |ejercicio2/datosIntroducidos.php|Formulario POST con los campos: <br>Nombre => text <br>Apellido => text|
 |ejercicio2/datosAlumno.php|Creamos variables con la información del **POST** y la mostramos por pantalla. Si se envió el formulario vacío, saltará un mensaje avisando de que no se ha introducido a ningún alumno.|
+
+#### Ejercicio 3: Session y redireccionamiento
+
+Crea una pequeña aplicación en PHP para simular un acceso a una aplicación web. Ten en cuenta las siguientes consideraciones:
+
+1. **index.php** - incluye el formulario de acceso, usuario y contraseña. Si los datos son correctos (usuario = alumno, contraseña = 4321), guarda la información en $_SESSION y redirige a bienvenida.php
+2. **bienvenida.php** - página protegida, en caso de que no haya usuario, redirige a index.php. Si hay usuario, muestra un mensaje "Hola bienvenido al curso".
+3. **logout.php** - destruye la sesión y redirige a index.php. Deberás de utilizar:
+* session_start()
+* session_unset()
+* session_destroy()
