@@ -1,7 +1,7 @@
 # WEB-SERVER-PHP
 
-## Practicas [📝](./PRACTICAS.md)
+## Practicas [📝](.php/EjerciciosPHP/PRACTICAS.md)
 Ejercicios que me a pedido mi profesora
 
-## Teoria [📝](./TEORIA.md)
+## Teoria [📝](.php/TeoriaPHP/TEORIA.md)
 Toda la teoria dada en clase
