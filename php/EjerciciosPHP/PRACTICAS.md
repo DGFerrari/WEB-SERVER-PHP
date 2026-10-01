@@ -35,19 +35,12 @@ Luego, otro archivo que contenga el formulario para mostrar la información del 
 |[ejercicio2/datosIntroducidos.php](./practica02/ejercicio2/datosIntroducidos.php)|Formulario POST con los campos: <br>Nombre => text <br>Apellido => text|
 |[ejercicio2/datosAlumno.php](./practica02/ejercicio2/datosAlumno.php)|Creamos variables con la información del **POST** y la mostramos por pantalla. Si se envió el formulario vacío, saltará un mensaje avisando de que no se ha introducido a ningún alumno.|
 
-#### Ejercicio 3: Session y redireccionamiento
+#### Ejercicio 3: Sesiones y redireccionamiento
 
-Crea una pequeña aplicación en PHP para simular un acceso a una aplicación web. Ten en cuenta las siguientes consideraciones:
-
-1. **index.php** - incluye el formulario de acceso, usuario y contraseña. Si los datos son correctos (usuario = alumno, contraseña = 4321), guarda la información en $_SESSION y redirige a bienvenida.php
-2. **bienvenida.php** - página protegida, en caso de que no haya usuario, redirige a index.php. Si hay usuario, muestra un mensaje "Hola bienvenido al curso".
-3. **logout.php** - destruye la sesión y redirige a index.php. Deberás de utilizar:
-* session_start()
-* session_unset()
-* session_destroy()
+Aplicación básica de inicio y cierre de sesión mediante un formulario y variables de sesión. El formulario envía el usuario y la contraseña a `bienvenida.php` mediante **POST**. Si ambos campos no están vacíos, se guarda el usuario en la sesión y se muestra un mensaje de bienvenida; si alguno está vacío, se redirige a `index.php`. Por ahora, no se comprueban credenciales específicas ni se verifica que exista una sesión activa al abrir la página de bienvenida.
 
 | Archivo | Función |
 |-|-|
-|[bienvenida.php](./practica03/bienvenida.php)||
-|[index.php](./practica03/index.php)||
-|[logout.php](./practica03/logout.php)||
+|[bienvenida.php](./practica03/bienvenida.php)|Inicia la sesión, recibe los datos del formulario y, si no están vacíos, guarda el usuario en `$_SESSION` y muestra un saludo. Si algún campo está vacío, redirige a `index.php`. Incluye un enlace para cerrar la sesión.|
+|[index.php](./practica03/index.php)|Muestra un formulario de acceso con campos para el usuario y la contraseña; envía los datos por **POST** a `bienvenida.php`.|
+|[logout.php](./practica03/logout.php)|Inicia la sesión, elimina sus variables con `session_unset()`, la destruye con `session_destroy()` y redirige a `index.php`.|
