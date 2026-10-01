@@ -21,8 +21,8 @@ Para que esto funcione, en la página debe de existir información de productos,
 
 | Archivo | Función |
 |-|-|
-|ejercicio1/index.php|Formulario **GET** con: <br>Nombre Producto => text|
-|ejercicio1/getProductos.php|Comprueba que el **Producto** pasado con GET esté en el array de productos. Si está, devuelve un mensaje con el nombre del producto; si no está, devuelve un mensaje avisando de que el producto no existe.|
+|[ejercicio1/index.php](./practica02/ejercicio1/index.php)|Formulario **GET** con: <br>Nombre Producto => text|
+|[ejercicio1/getProductos.php](./practica02/ejercicio1/getProductos.php)|Comprueba que el **Producto** pasado con GET esté en el array de productos. Si está, devuelve un mensaje con el nombre del producto; si no está, devuelve un mensaje avisando de que el producto no existe.|
 
 #### Ejercicio 2: Formulario usando POST
 
@@ -32,8 +32,8 @@ Luego, otro archivo que contenga el formulario para mostrar la información del 
 
 | Archivo | Función |
 |-|-|
-|ejercicio2/datosIntroducidos.php|Formulario POST con los campos: <br>Nombre => text <br>Apellido => text|
-|ejercicio2/datosAlumno.php|Creamos variables con la información del **POST** y la mostramos por pantalla. Si se envió el formulario vacío, saltará un mensaje avisando de que no se ha introducido a ningún alumno.|
+|[ejercicio2/datosIntroducidos.php](./practica02/ejercicio2/datosIntroducidos.php)|Formulario POST con los campos: <br>Nombre => text <br>Apellido => text|
+|[ejercicio2/datosAlumno.php](./practica02/ejercicio2/datosAlumno.php)|Creamos variables con la información del **POST** y la mostramos por pantalla. Si se envió el formulario vacío, saltará un mensaje avisando de que no se ha introducido a ningún alumno.|
 
 #### Ejercicio 3: Session y redireccionamiento
 
@@ -45,3 +45,9 @@ Crea una pequeña aplicación en PHP para simular un acceso a una aplicación we
 * session_start()
 * session_unset()
 * session_destroy()
+
+| Archivo | Función |
+|-|-|
+|[bienvenida.php](./practica03/bienvenida.php)||
+|[index.php](./practica03/index.php)||
+|[logout.php](./practica03/logout.php)||
