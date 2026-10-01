@@ -1,2 +1,7 @@
 # WEB-SERVER-PHP
-Repositorio con proyectitos y pruebas de PHP que he ido realizando mientras voy aprendiendo sobre este lenguaje.
+
+## Practicas [📝](./PRACTICAS.md)
+Ejercicios que me a pedido mi profesora
+
+## Teoria [📝](./TEORIA.md)
+Toda la teoria dada en clase
