@@ -8,8 +8,8 @@ Explicación y ejemplo de cómo funciona un GET en PHP.
 
 | Archivo | Función |
 |-|-|
-|**index.php**|Formulario **GET** con los siguientes campos:<br>Usuario => text <br>Fichero => file|
-|**get_post.php**|Pilla los datos del **GET** y los muestra por pantalla (hay mucho **código comentado**)|
+|[index.php](./practica01/index.php)|Formulario **GET** con los siguientes campos:<br>Usuario => text <br>Fichero => file|
+|[get_post.php](./practica01/get_post.php)|Pilla los datos del **GET** y los muestra por pantalla (hay mucho **código comentado**)|
 
 ## ▶ 02 Práctica usando GET y POST
 
