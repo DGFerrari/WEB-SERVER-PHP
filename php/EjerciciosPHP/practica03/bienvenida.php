@@ -7,7 +7,7 @@ $user_iniciado = $_POST['usuario'];
 $pasw_iniciado = $_POST['contra'];
 
 // Comprobamos que no sea nulo nada
-if (!($user_iniciado === '' || $pasw_iniciado === '')) {
+if ($user_iniciado === 'alumno' && $pasw_iniciado === '4321') {
 
     // Guardamos en la sesion el usuario
     $_SESSION['usuario'] = $user_iniciado;
