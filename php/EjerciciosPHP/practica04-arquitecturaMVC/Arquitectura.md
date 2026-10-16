@@ -1,12 +1,12 @@
-- **Contraseña encriptada**
+# **Contraseña encriptada**
 
-# Vista
+## Vista
 - formulario.php
 - listaUsuarios.php
 - login.php
 
-# Modelo
+## Modelo
 - conexionBD.php
 
-# Controlador
+## Controlador
 - comprobarLogin.php
