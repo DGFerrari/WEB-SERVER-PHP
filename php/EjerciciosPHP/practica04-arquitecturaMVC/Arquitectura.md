@@ -6,7 +6,7 @@
 - login.php
 
 ## Modelo
-- conexionBD.php
+- *conexionBD.php*
 
 ## Controlador
-- comprobarLogin.php
+- loginController.php
