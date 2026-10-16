@@ -1,6 +1,6 @@
 <?php
     // Llamamos la conexion a la BD
-    require_once __DIR__ . '/../modelo/conexionBD.php';
+    require __DIR__ . '/../modelo/conexionBD.php';
 
     // Pillamos usuario y contraseña del login
     $user = $_POST['usuario'];
