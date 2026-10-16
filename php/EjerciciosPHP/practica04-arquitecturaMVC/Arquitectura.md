@@ -3,7 +3,8 @@
 ## Vista
 - formulario.php
 - listaUsuarios.php
-- login.php
+- inicio.php
+- *login.php*
 
 ## Modelo
 - *conexionBD.php*
