@@ -3,7 +3,7 @@
 session_start();
 
 // requiere de user controller
-require_once __DIR__ . '/../controlador/userController.php';
+require_once __DIR__ . '/../controlador/adminController.php';
 ?>
 
 <h1> PANEL ADMIN </h1>

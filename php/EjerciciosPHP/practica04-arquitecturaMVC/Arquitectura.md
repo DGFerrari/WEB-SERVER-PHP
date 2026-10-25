@@ -2,7 +2,7 @@
 
 ## Vista
 - *login.php* OK
-- *admin.php*
+- *admin.php* OK
 - *user.php*
 
 ## Modelo
@@ -10,6 +10,6 @@
 
 ## Controlador
 - *loginController.php* OK
-- *adminController.php*
+- *adminController.php* OK
 - *userController.php*
 - *actualizarEmailController.php*
