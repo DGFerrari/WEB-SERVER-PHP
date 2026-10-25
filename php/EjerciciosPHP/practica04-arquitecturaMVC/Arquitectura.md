@@ -1,13 +1,15 @@
 # **Contraseña encriptada**
 
 ## Vista
-- formulario.php
-- listaUsuarios.php
-- inicio.php
-- *login.php*
+- *login.php* OK
+- *admin.php*
+- *user.php*
 
 ## Modelo
-- *conexionBD.php*
+- *conexionBD.php* OK
 
 ## Controlador
-- loginController.php
+- *loginController.php* OK
+- *adminController.php*
+- *userController.php*
+- *actualizarEmailController.php*

@@ -1,34 +1,47 @@
 <?php
-    // Llamamos la conexion a la BD
-    require __DIR__ . '/../modelo/conexionBD.php';
+// Iniciamos sesion
+session_start();
 
-    // Pillamos usuario y contraseña del login
-    $user = $_POST['usuario'];
-    $pswd = $_POST['contrasena'];
+require_once __DIR__ . '/../modelo/conexionBD.php';
 
-    // Consulta si existe usuario y contraseña
-    $sql = "SELECT usuario, contra FROM amvc WHERE usuario = '$user' AND contra = '$pswd'";
+// Comprobamos que pase la info por POST, sino no ejecuta el resto
+if (!($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
-    // Pasamos la query a hacer directamente
-    $resultados = mysqli_query($conexion, $sql); 
+    $_SESSION['merror'] = 'esto no es POST';
+    header("Location: ../vista/login.php");
+    exit;
+}
 
-    // Nos retorna si existen filas en la tabla
-    $num_filas = mysqli_num_rows($resultados); 
+// Recogemos el usuario y la contraseña
+$user = trim($_POST['username'], '');
+$pasw = $_POST['password'];
+// $pasw = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Comprobamos si existe el usuario y contraseña
-    if($num_filas == 0){
-        header("Location: ../vista/login.php");
+// Comprobamos los datos a la BD
+$sql = "SELECT usuario, contra, rol FROM amvc WHERE usuario = :user"; // Select
+$result = $conexion->prepare($sql); // Lo preparamos
+$result->execute(['user' => $user]); // Ejecutamos pasando los parametros ":tal"
+$comprovar = $result->fetch(PDO::FETCH_ASSOC); // Guardamos el resultado en un array
 
-    } else {
-        // Iniciamos Sesion
-        session_start();
 
-        // Guardamos en la sesion el usuario
-        $_SESSION['usuario'] = $user;
-
-        // Redireccionamos a la pagina de inicio
-        header("Location: ../vista/inicio.php");
+if (isset($comprovar['contra']) && $pasw === $comprovar['contra']) {
     
+    // Comprovamos que rol es el usuario:
+    if ($comprovar['rol'] === "admin") {   
+    header("Location: ../vista/admin.php");
+    exit;
+
+    } elseif($comprovar['rol'] === "user") {
+    header("Location: ../vista/user.php");
+    exit;
+
     }
+
+// Si verifica que no es igual la contraseña
+} else {
+    $_SESSION['merror'] = 'Usuaro o Contraseña incorrecta';
+    header("Location: ../vista/login.php");
+    exit;
+}
 
 ?>
