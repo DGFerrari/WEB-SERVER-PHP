@@ -4,6 +4,20 @@ session_start();
 
 require_once __DIR__ . '/../modelo/conexionBD.php';
 
+// Establecer contrasñas encriptadas con hash
+/*
+$nuevaPassword = 'a';
+$hash = password_hash($nuevaPassword, PASSWORD_DEFAULT);
+
+$stmt = $conexion->prepare(
+    'UPDATE amvc SET contra = :hash WHERE usuario = :usuario'
+);
+$stmt->execute([
+    'hash' => $hash,
+    'usuario' => 'a'
+]);
+*/
+
 // Comprobamos que pase la info por POST, sino no ejecuta el resto
 if (!($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
@@ -15,7 +29,8 @@ if (!($_SERVER['REQUEST_METHOD'] === 'POST')) {
 // Recogemos el usuario y la contraseña
 $user = trim($_POST['username'], '');
 $pasw = $_POST['password'];
-// $pasw = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$hash = password_hash($pasw, PASSWORD_DEFAULT);
+//password_hash($pasw, PASSWORD_DEFAULT);
 
 // Comprobamos los datos a la BD
 $sql = "SELECT usuario, contra, nombre, apellidos, email, rol FROM amvc WHERE usuario = :user"; // Select
@@ -24,7 +39,7 @@ $result->execute(['user' => $user]); // Ejecutamos pasando los parametros ":tal"
 $comprovar = $result->fetch(PDO::FETCH_ASSOC); // Guardamos el resultado en un array
 
 
-if (isset($comprovar['contra']) && $pasw === $comprovar['contra']) {
+if (isset($comprovar['contra']) && password_verify($pasw, $comprovar['contra'])) {
     
     // Guardar datos en session
     $_SESSION['usuario'] = $comprovar['usuario'];
@@ -49,5 +64,9 @@ if (isset($comprovar['contra']) && $pasw === $comprovar['contra']) {
     header("Location: ../vista/login.php");
     exit;
 }
+
+
+
+
 
 ?>
