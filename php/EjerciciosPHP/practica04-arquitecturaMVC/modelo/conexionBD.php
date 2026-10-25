@@ -12,9 +12,9 @@
 		$conexion = new PDO("mysql:host=" . constant("HOST_DB") . ";dbname=" . constant("NAME_DB"), constant("USER_DB"), constant("PASS_DB"));
 		
 		$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "Connected successfully";
+		//echo "Connected successfully";
 	} catch(PDOException $e) {
-		echo "Connection failed: " . $e->getMessage();
+		//echo "Connection failed: " . $e->getMessage();
 	}
 	
     // Conexion a la BD con Mysqli
