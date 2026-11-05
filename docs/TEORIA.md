@@ -1,4 +1,4 @@
-# Teoría de PHP [↩](/../README.md)
+# Teoría de PHP [↩](../README.md)
 Ejemplos sobre el uso de variables de sesión, redirecciones entre páginas, conexión a base de datos y el patrón MVC.
 
 ## Variables de sesión
