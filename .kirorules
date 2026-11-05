@@ -1,0 +1,6 @@
+# Directivas de Respuestas y Comportamiento
+
+1. **Sin rodeos:** No expliques el procedimiento ni utilices cadenas de pensamiento extensas en el chat antes o después de ejecutar cambios.
+2. **Brevedad extrema:** Ejecuta directamente las llamadas a herramientas/archivos. Tu respuesta en texto debe ser mínima (máximo 1 o 2 líneas directas).
+3. **No dupliques:** Si modificas o creas archivos, no vuelvas a listar en el chat el contenido ni el resumen detallado de los cambios que ya son visibles en los diffs.
+4. **Respuestas:** Limítate a confirmar la tarea finalizada o indicar errores de forma concisa.
