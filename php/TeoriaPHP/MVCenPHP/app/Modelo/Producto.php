@@ -1,4 +1,6 @@
+
 <?php
+/*
 class Producto {
 
     $pdo = new PDO($dsn, $u, $p);
@@ -8,7 +10,5 @@ class Producto {
     )->fetchAll(PDO::FETCH_ASSOC);
 
 }
-
-
-
+*/
 ?>
