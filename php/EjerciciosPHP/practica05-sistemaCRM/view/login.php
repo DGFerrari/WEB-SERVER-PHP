@@ -16,6 +16,6 @@
         <input type="password" id="contra" name="contra" required> <br>
         <button type="submit">Iniciar Sesion</button>
     </form>
-
+    
 </body>
 </html>
