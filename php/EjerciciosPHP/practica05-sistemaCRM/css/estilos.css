@@ -1,0 +1,277 @@
+/* ==========================================================
+   Estilos sencillos para el CRM
+   ========================================================== */
+
+/* ===== Colores (se cambian aqui para todo el CRM) ===== */
+:root {
+    --primario: #2563eb;
+    --primario-oscuro: #1d4ed8;
+    --fondo: #f3f4f6;
+    --tarjeta: #ffffff;
+    --texto: #1f2937;
+    --texto-suave: #6b7280;
+    --borde: #d1d5db;
+    --ok: #15803d;
+    --ok-fondo: #dcfce7;
+    --error: #b91c1c;
+    --error-fondo: #fee2e2;
+}
+
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0 16px 40px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--texto);
+    background: var(--fondo);
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin: 24px 0 16px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 28px 0 12px;
+}
+
+a {
+    color: var(--primario);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+small {
+    color: var(--texto-suave);
+}
+
+hr {
+    display: none; /* el menu ya separa visualmente */
+}
+
+/* ===== Menu superior ===== */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    margin: 0 -16px;
+    padding: 12px 16px;
+    background: var(--tarjeta);
+    border-bottom: 1px solid var(--borde);
+    color: var(--texto-suave);
+}
+
+nav a {
+    font-weight: 600;
+}
+
+nav form {
+    margin: 0 0 0 auto !important; /* boton de cerrar sesion a la derecha */
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+}
+
+/* ===== Mensajes (los <p> con color verde/rojo en linea) ===== */
+p[style*="color: green"],
+p[style*="color: red"] {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+
+p[style*="color: green"] {
+    color: var(--ok) !important;
+    background: var(--ok-fondo);
+}
+
+p[style*="color: red"] {
+    color: var(--error) !important;
+    background: var(--error-fondo);
+}
+
+/* ===== Formularios ===== */
+form {
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+/* Formularios dentro de tablas (botones Eliminar, Completar...) */
+td form {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    display: inline-block;
+    min-width: 150px;
+    margin: 6px 0;
+    font-weight: 600;
+}
+
+/* En los filtros (formularios GET) las etiquetas no necesitan ancho fijo */
+form[method="GET"] label {
+    min-width: 0;
+    margin-left: 8px;
+}
+
+form[method="GET"] label:first-child {
+    margin-left: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+input[type="datetime-local"],
+select,
+textarea {
+    font: inherit;
+    padding: 7px 10px;
+    margin: 4px 0;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--texto);
+    max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 280px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 560px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--primario);
+    outline-offset: 1px;
+    border-color: var(--primario);
+}
+
+button {
+    font: inherit;
+    font-weight: 600;
+    padding: 7px 14px;
+    margin: 4px 4px 4px 0;
+    border: none;
+    border-radius: 6px;
+    background: var(--primario);
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primario-oscuro);
+}
+
+/* Botones dentro de tablas: mas pequeños */
+td button {
+    padding: 4px 10px;
+    font-size: 0.85rem;
+}
+
+td select {
+    padding: 4px 6px;
+    font-size: 0.85rem;
+}
+
+/* El boton de cerrar sesion, discreto */
+nav button {
+    background: transparent;
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+nav button:hover {
+    background: var(--error-fondo);
+}
+
+/* ===== Tablas ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--tarjeta);
+    border: 1px solid var(--borde) !important;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+th,
+td {
+    padding: 10px 12px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--borde) !important;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #f9fafb;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--texto-suave);
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+tfoot th {
+    color: var(--texto);
+}
+
+/* Enlaces de accion en las tablas, con un poco de aire */
+td a {
+    margin-right: 8px;
+}
+
+/* ===== Movil: las tablas se desplazan en horizontal ===== */
+@media (max-width: 700px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    label {
+        display: block;
+        min-width: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        width: 100%;
+    }
+}
